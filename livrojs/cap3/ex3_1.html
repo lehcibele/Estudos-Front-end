@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média alunos</title>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            margin: 10px;
+        }
+
+        input[type='button'] {
+            margin-top: 10px;
+            background-color: darkgrey;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        input[type='button']:hover {
+            background-color: lightslategrey;
+            font-size: 1rem;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Programa Situação do Aluno</h1>
+
+    <form>
+        <label for="nomeAluno">Nome do Aluno:</label>
+        <input type="text" id="nomeAluno">
+
+        <label for="nota1">1ª Nota:</label>
+        <input type="text" id="nota1">
+
+        <label for="nota2">2ª Nota:</label>
+        <input type="text" id="nota2">
+
+        <input type="button" value="Exibir Média e Situação" id="btnResultado">
+    </form>
+
+    <h2 id="mostrarMedia"></h2>
+    <h2 id="situacao"></h2>
+
+    <script>
+        function calcularMedia(){
+            let nomeAluno = document.getElementById('nomeAluno').value;
+            let nota1 = Number(document.getElementById('nota1').value);
+            let nota2 = Number(document.getElementById('nota2').value);
+            let mostrarMedia = document.getElementById('mostrarMedia');
+            let situacao = document.getElementById('situacao');
+
+            let media = (nota1 + nota2) / 2;
+
+            mostrarMedia.textContent = `Média das Notas: ${media.toFixed(2)}`;
+
+            if(media >= 7) {
+                situacao.textContent = `Parabéns ${nomeAluno}! Você foi aprovado(a) :)`;
+                situacao.style.color = 'dodgerblue';
+            } else {
+                situacao.textContent = `Poxa ${nomeAluno} você foi reprovado :(`;
+                situacao.style.color = 'red';
+            }
+
+        }
+        let btnResultado = document.getElementById('btnResultado');
+        btnResultado.addEventListener('click', calcularMedia);
+    </script>
+    
+</body>
+</html>

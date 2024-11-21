@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="css/ex3_2.css">
+</head>
+<body>
+
+    <main id="container">
+        <div id="container-img">
+            <img src="img/download.jpg" alt="Coelho malhando">
+        </div>
+
+        <section id="container-calculadora">
+            <h1>Programa Cálculo do Peso Ideal</h1>
+
+            <form>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+
+                <label for="sexo">Sexo:
+                    <label for="masculino">
+                        <input type="radio" name="sexo" value="masculino" id="masculino">
+                        Masculino
+                    </label>
+                    
+                    <label for="feminino">
+                        <input type="radio" name="sexo" value="feminino" id="feminino">
+                        Feminino
+                    </label>
+                </label>
+
+                <div>
+                    <label for="altura">Altura:</label>
+                    <input type="text" name="altura" id="altura">
+                </div>
+
+                <div>
+                    <input type="button" value="Calcular Peso Ideal" id="btnCalcularPeso">
+                    <input type="button" value="Limpar Campos" id="btnLimparCampos">
+                </div>
+                
+            </form>
+
+            <h2 id="mostrarPeso"></h2>
+        </section>
+
+        
+        
+    </main>
+
+    <script>
+        function calcularPeso() {
+            let nome = document.getElementById('nome').value;
+            let masculino = document.getElementById('masculino').checked;
+            let feminino = document.getElementById('feminino').checked;
+            let altura = Number(document.getElementById('altura').value);
+            let mostrarPeso = document.getElementById('mostrarPeso');
+
+            // Verifica se o nome foi preenchido e sexo selecionado
+            if(nome == '' || (masculino == false && feminino == false)){
+                alert('Por favor, informe o nome e selecione o sexo...');
+                
+                // Joga o foco no campo de edição nome
+                nome.focus();
+                return;
+            }
+
+            // Se altura vazio ou NaN, o texto é exibido
+            if(altura == 0 || isNaN(altura)){
+                alert('Por favor, informe a altura corretamente');
+
+                altura.focus();
+                return;
+            }
+
+            let peso = 0;
+
+            // Se masculino true
+            if(masculino) {
+                peso = 22 * Math.pow(altura, 2);
+            } else {
+                peso = 21 * Math.pow(altura, 2);
+            }
+
+            mostrarPeso.textContent = `${nome} Seu peso ideal é ${peso.toFixed(3)} kg`;
+
+        }
+
+        function limparCampos() {
+            document.getElementById('nome').value = '';
+            document.getElementById('masculino').checked = false;
+            document.getElementById('feminino').checked = false;
+            document.getElementById('altura').value = '';
+            document.getElementById('mostrarPeso').textContent = '';
+
+            document.getElementById('nome').focus();
+        }
+
+        let btnCalcularPeso = document.getElementById('btnCalcularPeso');
+        btnCalcularPeso.addEventListener('click', calcularPeso);
+
+        let btnLimparCampos = document.getElementById('btnLimparCampos');
+        btnLimparCampos.addEventListener('click', limparCampos);
+    </script>
+
+    
+</body>
+</html>

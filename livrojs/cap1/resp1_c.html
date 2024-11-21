@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>informe as opções de pagamento da loja.</title>
+</head>
+<body>
+
+    <script>
+        /* 
+            Elaborar um programa para uma loja, o qual leia o preço de um produto e
+            informe as opções de pagamento da loja. Calcule e informe o valor para
+            pagamento à vista com 10% de desconto e o valor em 3x.
+        */
+        var precoProduto = Number(prompt("Preço R$: "));
+        var aVista = precoProduto - (precoProduto * 0.1);
+        var parcelado = precoProduto / 3;
+        alert("À vista R$: " + aVista.toFixed(2) + "\nOu 3x de R$: " + parcelado.toFixed(2));
+    </script>
+    
+</body>
+</html>

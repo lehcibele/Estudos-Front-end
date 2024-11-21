@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lan House JS</title>
+</head>
+<body>
+
+    <!--
+        Elaborar um programa para uma lan house de um aeroporto – O programa deve
+        ler o valor de cada 15 minutos de uso de um computador e o tempo de
+        uso por um cliente em minutos. Informe o valor a ser pago pelo cliente,
+        sabendo que as frações extras de 15 minutos devem ser cobradas de
+        forma integral. A Figura 2.12 exibe um exemplo com dados do
+        programa.
+    -->
+
+    <h1>Lan House JS</h1>
+    <p>
+        Valor por 15 min de Uso R$:
+        <input type="text" id="valor15Min">
+    </p>
+    <p>
+        Tempo de Uso por Cliente:
+        <input type="text" id="tempoCliente">
+    </p>
+    <p>
+        <input type="button" value="Calcular Valor a Pagar" id="btnPagar">
+    </p>
+
+    <h2 id="valorPagar"></h2>
+
+    <script>
+        function valorPagar() {
+            let valor15Min = Number(document.getElementById('valor15Min').value);
+            let tempoCliente = Number(document.getElementById('tempoCliente').value);
+            let valorPagar = document.getElementById('valorPagar');
+
+            let valor = Math.ceil(tempoCliente / 15) * valor15Min;
+
+            valorPagar.textContent = `Valor a pagara R$ ${valor.toFixed(2)}`;
+
+        }
+        let btnPagar = document.getElementById('btnPagar');
+        btnPagar.addEventListener('click', valorPagar);
+    </script>
+    
+</body>
+</html>
