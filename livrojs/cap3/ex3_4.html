@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3.4</title>
+</head>
+<body>
+
+    <!--
+        a) Sabendo que o fuso horário da França em relação ao Brasil é de + 5 horas
+        (no horário de verão na França), elaborar um programa que leia a hora no
+        Brasil e informe a hora na França.
+    -->
+
+    <h1>Programa Fuso Horário</h1>
+    <p>Hora no Brasil (h.m):
+        <input type="text" id="horaBrasil">
+    </p>
+
+    <p>
+        <input type="button" value="Exibir Hora na França" id="btnExibirHora">
+    </p>
+
+    <h3 id="mostrarHora"></h3>
+
+    <script>
+        function calcularFuso() {
+            // cria uma referência aos elementos da página
+            let horaBrasil = document.getElementById('horaBrasil');
+            let mostrarHora = document.getElementById('mostrarHora');
+
+            let horaBr = Number(horaBrasil.value);
+
+            // verifica se o campo horaBrasil foi preenchido
+            if(horaBr == "" || isNaN(horaBr)) {
+                alert('Informe a hora no Brasil corretamente');
+                horaBrasil.focus();
+                return;
+            }
+
+            let horaFranca = horaBr + 5;
+
+            // se passar das 24 horas na frança
+            if(horaFranca > 24) {
+                horaFranca = horaFranca - 24;
+            }
+
+            mostrarHora.textContent = "Hora na França: " + horaFranca.toFixed(2);
+            
+        }
+
+        let btnExibirHora = document.getElementById('btnExibirHora');
+        btnExibirHora.addEventListener('click', calcularFuso);
+
+        
+
+    </script>
+    
+    
+</body>
+</html>

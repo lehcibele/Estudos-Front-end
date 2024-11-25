@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3.5</title>
+</head>
+<body>
+
+    <!--
+        b) Elaborar um programa que leia um número e calcule sua raiz quadrada.
+        Caso a raiz seja exata (quadrados perfeitos), informá-la, caso contrário,
+        informe: ‘Não há raiz exata para ..’.
+    -->
+
+    <h1>Programa Raiz Quadrada</h1>
+    <p>
+        Número:
+        <input type="text" id="numero">
+    </p>
+
+    <p>
+        <input type="button" value="Exibir Raiz Quadrada" id="btnRaiz">
+    </p>
+
+    <h2 id="mostrarRaiz"></h2>
+
+    <script>
+
+        function calcularRaiz() {
+            let numero = Number(document.getElementById('numero').value);
+            let mostrarRaiz = document.getElementById('mostrarRaiz');
+
+            let raiz = Math.sqrt(numero);
+
+            if(Number.isInteger(raiz)){
+                mostrarRaiz.textContent = `A raiz de ${numero} é ${raiz}`;
+            } else {
+                mostrarRaiz.textContent = `Não há raiz exata para ${numero}`;
+            }
+        }
+        let btnRaiz = document.getElementById('btnRaiz');
+        btnRaiz.addEventListener('click', calcularRaiz);
+        
+    </script>
+    
+    
+</body>
+</html>
