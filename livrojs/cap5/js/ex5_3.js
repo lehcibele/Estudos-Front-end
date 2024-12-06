@@ -46,8 +46,40 @@ function listarCarros() {
     document.getElementById('saidaLista').textContent = lista;
 }
 
+function filtrarCarros() {
+    // faz a leitura do valor máximo a partir do método prompt
+    let maximo = Number(prompt("Qual o valor máximo que o cliente deseja pagar?"));
+
+    if(maximo == 0 || isNaN(maximo)){
+        alert("Preencha o campo");
+        return;
+    }
+
+    // para concatenar lista de carros que obedecem ao critério de pesquisa / filtro
+    let lista = "";
+
+    // percorre todos os elementos do vetor
+    for(let i = 0; i < carros.length; i++) {
+        if(carros[i].preco <= maximo){
+            lista += carros[i].modelo + " - R$ " + carros[i].preco.toFixed(2) + "\n";
+        }
+    }
+
+    let saidaLista = document.getElementById('saidaLista');
+
+    // se a lista esta vazia, significa que nenhum veículo foi encontrado (no for)
+    if(lista == "") {
+        saidaLista.textContent = "Não há carros com preço até R$ " + maximo.toFixed(2);
+    } else {
+        saidaLista.textContent = "Carros até R$ " + maximo.toFixed(2) + "\n------------------------\n" + lista;
+    }
+}
+
 let btnAdicionar = document.getElementById('btnAdicionar');
 btnAdicionar.addEventListener('click', adicionarCarros);
 
 let btnListarCarros = document.getElementById('btnListarCarros');
 btnListarCarros.addEventListener('click', listarCarros);
+
+let btnFiltrar = document.getElementById('btnFiltrar');
+btnFiltrar.addEventListener('click', filtrarCarros);
