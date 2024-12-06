@@ -14,7 +14,7 @@ function adicionarCarros() {
         return;
     }
 
-        // Adiciona dados ao vetor objeto
+    // Adiciona dados ao vetor objeto
     carros.push({
         modelo: modelo,
         preco: preco
