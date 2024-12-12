@@ -34,6 +34,33 @@ function adicionar() {
 
 function verificarOrdemNumeros() {
     let saidaOrdem = document.getElementById('saidaOrdem');
+    let inputNumero = document.getElementById('inputNumero');
+
+    let numero = inputNumero.value;
+
+    // verificar se existe itens na lista de numeros
+    if(listaNumeros.length === 0) {
+        alert("Não tem números na lista");
+        return;
+    }
+
+    let verificaOrdem = true;
+
+    // verificar se os numeros estão em ordem crescente
+    for(let i = 0; i < listaNumeros.length - 1; i++) {
+        if(listaNumeros[i].numero > listaNumeros[i + 1].numero) {
+            verificaOrdem = false;
+            break;
+        }
+
+    }
+
+    if(verificaOrdem) {
+        saidaOrdem.textContent = "Números estão em ordem crescente";
+    } else {
+        saidaOrdem.textContent = "Atenção... Números não estão em ordem crescente";
+    }
+
 }
 
 let btnAdicionar = document.getElementById('btnAdicionar');
