@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa concurs</title>
+</head>
+<body>
+
+    <!--
+        c) Elaborar um programa que leia nome e número de acertos de candidatos inscritos em um concurso. Listar os dados a cada inclusão. Ao clicar no botão Aprovados 2ª Fase, ler o número de acertos para aprovação dos candidatos para a 2ª fase do concurso, conforme ilustra a Figura 5.14. O programa deve, então, exibir os candidatos aprovados, ou seja, apenas os que obtiveram nota maior ou igual à nota informada. Exibir os candidatos aprovados em ordem decrescente de número de acertos. Caso nenhum candidato tenha sido aprovado, exibir mensagem.
+    -->
+
+    <h1>Programa concurso</h1>
+
+    <p>
+        Candidato:
+        <input type="text" id="inputNome">
+    </p>
+    <p>
+        Nº Acertos:
+        <input type="text" id="inputAcertos">
+        <input type="button" value="Adicionar" id="btnAdicionar">
+    </p>
+
+    <p>
+        <input type="button" value="Listar Todos" id="btnListarTodos">
+        <input type="button" value="Aprovados 2ª Etapa" id="btnAprovados">
+    </p>
+
+    <pre id="saidaListarTodos"></pre>
+    <pre id="saidaAprovados"></pre>
+
+    <script src="js/resp5_c.js"></script>
+    
+</body>
+</html>
