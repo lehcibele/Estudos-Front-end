@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Inverter Palavra</title>
+</head>
+<body>
+
+    <script>
+        let palavra = prompt("Palavra: ");
+        let tam = palavra.length;
+
+        // Inverso inicia a última letra da palavra em caixa alta
+        let inverso = palavra.charAt(tam-1).toUpperCase();
+
+        // for decrescente percorre as demais letras e...
+        for(let i = tam-2; i >= 0; i--) {
+            inverso += palavra.charAt(i).toLocaleLowerCase(); // converter em caixa baixa
+        }
+
+        alert("Palavra: " + palavra + "\nInvertida: " + inverso);
+
+    </script>
+    
+</body>
+</html>
