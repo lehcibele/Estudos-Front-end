@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Caixa da Loja</title>
+</head>
+<body>
+
+    <!--
+        O programa deve ler a data de vencimento e o valor da conta. Caso a conta esteja em atraso, o programa deve calcular o valor da multa e dos juros a serem acrescentado no valor total.
+    -->
+
+    <h1>Programa Caixa da Loja</h1>
+    <p>
+        Data de Vencimento:
+        <input type="date" id="inputData" autofocus>
+    </p>
+
+    <p>
+        Valor da Conta R$:
+        <input type="text" id="inputValor">
+        <input type="button" value="Calcular Multa e Juros" id="btnCalcular">
+    </p>
+
+    <p>
+        Valor da Multa R$: 
+        <input type="text" id="saidaMulta" readonly>
+    </p>
+
+    <p>
+        Valor do Juros R$: 
+        <input type="text" id="saidaJuros" readonly>
+    </p>
+
+    <p>
+        Total a pagar R$: 
+        <input type="text" id="saidaTotal" readonly>
+        <input type="button" value="Nova Conta" id="btnNovaConta">
+    </p>
+
+    <script src="js/ex6_10.js"></script>
+    
+</body>
+</html>
