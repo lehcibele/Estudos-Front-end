@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de arguments</title>
+</head>
+<body>
+
+    <!--
+        Usando arguments para obter o conteúdo das variáveis passadas como parâmetro
+    -->
+    <script>
+        function calcularMedia() {
+            if(arguments.length == 0) { // se não forem passados argumentos
+                alert('Informe, no mínimo, uma nota');
+                return 0;
+            }
+
+            let soma = 0; // vai acumular a soma das notas
+            let numNotas = arguments.length; // Obtém a quantidade de argumentos
+
+            for(let i = 0; i < numNotas; i++) {
+                soma += arguments[i]; // acumula a soma das notas
+            }
+
+            let media = soma / numNotas; // calcula a média
+            alert('M´dia das notas: ' + media.toFixed(1));
+        }
+
+        // exemplos de chamada de calcularMedia() com nº argumentos
+        calcularMedia(5, 6, 8);
+        calcularMedia(2, 10);
+        calcularMedia(7.5, 10, 8, 9.5);
+        calcularMedia();
+
+    </script>
+    
+</body>
+</html>

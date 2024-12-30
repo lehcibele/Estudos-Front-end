@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função com passagem de parâmetro</title>
+</head>
+<body>
+
+    <script>
+        function exibirSituacao(nota, media) {
+            if(nota >= media) {
+                alert("Aprovado");
+            } else {
+                alert("Reprovado");
+            }
+        }
+
+        let prova1 = Number(prompt("Qual a nota: "));
+
+        // chama a função exibirSituacao passando a nota da prova1 e a média como argumentos
+        exibirSituacao(prova1, 7);
+
+    </script>
+    
+</body>
+</html>
