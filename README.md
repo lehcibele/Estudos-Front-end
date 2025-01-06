@@ -1,6 +1,6 @@
 # javascript-estudos
- Repositório criado para registrar meus estudos.
- Atualamente estou estudando JavaScript.
+ Repositório criado para registrar meus estudos. \
+ Atualmente estou estudando JavaScript.
 
 ## Tecnologia 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
