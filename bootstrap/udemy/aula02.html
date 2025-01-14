@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elementos Flutuantes</title>
+
+    <link href="/bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 <body>
 
+    <!-- Elementos Flutuantes -->
+    <div style="border: 1px solid red;" class="clearfix">
+        <div class="bg-success float-start">Float Left</div>
+        <div class="bg-warning float-end">Float Right</div>
+    </div>
+
+    <!-- Posicionamento fixo - top e bottom -->
+    <h1 class="bg-success fixed-bottom">Título do conteúdo fixo</h1>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, obcaecati odio, soluta sed porro maiores itaque veniam, explicabo temporibus ea magnam? Cum numquam architecto quaerat aspernatur aliquam, impedit delectus voluptatum?
+    </p>
+
+    <!-- 
+        Float responsivo - float-<tela>-<direcao>
+            tela: sm, md, lg, xl
+            alinhamento: start, end
+    -->
+    <div class="float-sm-end">tela &gt;= 576px *</div> <!-- Small -->
+    <div class="float-md-end">tela &gt;= 768px *</div> <!-- Medium -->
+    <div class="float-lg-end">tela &gt;= 992px *</div> <!-- Large -->
+    <div class="float-xl-end">tela &gt;= 1200px *</div> <!-- Extra Large -->
     
-    
+
+    <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
