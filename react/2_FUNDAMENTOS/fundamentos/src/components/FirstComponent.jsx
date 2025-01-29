@@ -1,7 +1,11 @@
+// Arquivos de estilo
+
 const FirstComponent = () => {
+  // essa função faz isso
   return(
     <div>
-        <h1>Meu Primeiro Componente</h1>
+      {/* Algum comentario */}
+      <h1>Meu Primeiro Componente</h1>
     </div>
   );
 };
