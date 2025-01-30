@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 
-import 
+import City from './assets/City.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className='App'>
@@ -15,7 +14,7 @@ function App() {
       </div>
       {/* Imagem em asset */}
       <div>
-        <img src="" alt="" />
+        <img src={City} alt="Cidade" />
       </div>
     </div>
   )
