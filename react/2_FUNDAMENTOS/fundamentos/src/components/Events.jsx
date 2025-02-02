@@ -15,7 +15,7 @@ const Events = () => {
     return(
         <div>
             <div>
-                <button onClick={handleMyEvent}>Clique aqui!</button>
+                <button onClick={handleMyEvent}>Clique aqui! </button>
             </div>
             <div>
                 <button onClick={() => console.log("clicou!")}>Clique aqui também!</button>
